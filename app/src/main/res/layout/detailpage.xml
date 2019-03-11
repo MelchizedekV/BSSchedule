@@ -1,0 +1,244 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tool="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ImageView
+        android:id="@+id/imgbckicon"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_margin="10dp"
+        android:padding="10dp"
+        android:src="@drawable/backbtn" />
+
+    <TextView
+        android:id="@+id/txttitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/imgbckicon"
+        android:layout_margin="20dp"
+        android:text="@string/details"
+        android:textColor="@color/black"
+        android:textSize="20dp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/nodata"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:text="@string/nodataav"
+        android:textSize="30dp"
+        android:visibility="gone" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/txttitle"
+
+        >
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <LinearLayout
+                android:id="@+id/dateLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:weightSum="2"
+                >
+
+                <TextView
+                    android:id="@+id/txtdate"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="20dp"
+                    android:layout_weight="1"
+                    android:text="@string/Date"
+                    android:textSize="20dp" />
+
+                <TextView
+                    android:id="@+id/date"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="20dp"
+                    android:layout_weight="1"
+                    android:textColor="@color/black"
+                    android:textSize="20dp"
+                    tool:text="@string/Date" />
+
+            </LinearLayout>
+
+            <View
+                android:id="@+id/viewseperator1"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_below="@+id/dateLayout"
+                android:layout_marginLeft="20dp"
+                android:background="@color/grey">
+
+            </View>
+
+            <LinearLayout
+                android:id="@+id/dayLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/viewseperator1"
+                android:weightSum="2"
+                >
+
+                <TextView
+                    android:id="@+id/txtday"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="20dp"
+                    android:layout_weight="1"
+                    android:text="@string/Day"
+                    android:textSize="20dp" />
+
+                <TextView
+                    android:id="@+id/day"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="20dp"
+                    android:layout_weight="1"
+                    android:textColor="@color/black"
+                    android:textSize="20dp"
+                    tool:text="@string/Day" />
+            </LinearLayout>
+
+            <View
+                android:id="@+id/viewseperator2"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_below="@+id/dayLayout"
+                android:layout_marginLeft="20dp"
+                android:background="@color/grey">
+
+            </View>
+
+            <LinearLayout
+                android:id="@+id/placeLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/viewseperator2"
+                android:weightSum="2"
+                >
+
+
+                <TextView
+                    android:id="@+id/txtplace"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="20dp"
+                    android:layout_weight="1"
+                    android:text="@string/Place"
+                    android:textSize="20dp" />
+
+                <TextView
+                    android:id="@+id/place"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="20dp"
+                    android:layout_weight="1"
+                    android:textColor="@color/black"
+                    android:textSize="20dp"
+                    tool:text="@string/Place" />
+
+            </LinearLayout>
+
+            <View
+                android:id="@+id/viewseperator3"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_below="@+id/placeLayout"
+                android:layout_marginLeft="20dp"
+                android:background="@color/grey">
+
+            </View>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/subLayout"
+                android:layout_below="@+id/viewseperator3"
+                android:weightSum="2"
+                >
+                <TextView
+                    android:id="@+id/txtsub"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="20dp"
+                    android:layout_weight="1"
+                    android:text="@string/Sub"
+                    android:textSize="20dp" />
+
+                <TextView
+                    android:id="@+id/sub"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="20dp"
+                    android:layout_weight="1"
+                    android:textColor="@color/black"
+                    android:textSize="20dp"
+                    tool:text="@string/Sub" />
+
+            </LinearLayout>
+
+            <View
+                android:id="@+id/viewseperator4"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_below="@+id/subLayout"
+                android:layout_marginLeft="20dp"
+                android:background="@color/grey">
+
+            </View>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/speakerLayout"
+                android:layout_below="@+id/viewseperator4"
+                android:weightSum="2"
+                >
+                <TextView
+                    android:id="@+id/txtspeaker"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="20dp"
+                    android:layout_weight="1"
+                    android:text="@string/Speaker"
+                    android:textSize="20dp" />
+
+                <TextView
+                    android:id="@+id/speaker"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="20dp"
+                    android:textColor="@color/black"
+                    android:textSize="20dp"
+                    android:layout_weight="1"
+                    tool:text="@string/Speaker" />
+            </LinearLayout>
+
+
+            <View
+                android:id="@+id/viewseperator5"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_below="@+id/speakerLayout"
+                android:layout_marginLeft="20dp"
+                android:background="@color/grey">
+
+            </View>
+
+        </RelativeLayout>
+
+    </ScrollView>
+
+</RelativeLayout>

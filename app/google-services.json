@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "326675819001",
+    "firebase_url": "https://bsscripture-fc3fc.firebaseio.com",
+    "project_id": "bsscripture-fc3fc",
+    "storage_bucket": "bsscripture-fc3fc.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:326675819001:android:a6cdf5bb7db34efc",
+        "android_client_info": {
+          "package_name": "com.example.user.bsschedule"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "326675819001-q7jaenpuk8ka8ggr3smn697q0q19s0i0.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.user.bsschedule",
+            "certificate_hash": "8600a6e816b0f7acb8814b2d95c90ffbad7ae2ca"
+          }
+        },
+        {
+          "client_id": "326675819001-vd22q7lsd40a3hn22ns1cpm9gvp061sc.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCapbyhXEYqHhbtDZe7kW91es4SSDwRsRY"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "326675819001-vd22q7lsd40a3hn22ns1cpm9gvp061sc.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

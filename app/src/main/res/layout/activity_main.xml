@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <ImageView
+        android:id="@+id/imgbsscrip"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/bsicon"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="50dp"
+        />
+
+    <EditText
+        android:id="@+id/etdate"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/imgbsscrip"
+        android:drawableRight="@drawable/calender"
+        android:paddingLeft="50dp"
+        android:paddingRight="50dp"
+        android:layout_margin="50dp"
+        android:hint="@string/hint_date"
+        android:padding="10dp"
+        android:drawableEnd="@drawable/calender" />
+
+ <!--  <Spinner
+       android:id="@+id/spinnplace"
+       android:layout_width="match_parent"
+       android:layout_height="wrap_content"
+       android:layout_below="@+id/txtdate"
+       android:layout_margin="30dp"
+
+       >
+
+   </Spinner>
+ -->   <EditText
+        android:id="@+id/etplace"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/etdate"
+        android:layout_margin="50dp"
+        android:paddingLeft="50dp"
+        android:paddingRight="50dp"
+        android:padding="10dp"
+
+
+    >
+
+    </EditText>
+    <TextView
+        android:id="@+id/submitbtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/etplace"
+        android:text="@string/submit"
+        android:background="@drawable/btncolor"
+        android:layout_centerHorizontal="true"
+        android:textColor="@color/white"
+        android:textSize="20sp"
+        android:layout_marginTop="70dp"
+        android:paddingLeft="100dp"
+        android:paddingRight="100dp"
+        android:paddingTop="15dp"
+        android:paddingBottom="15dp"
+        />
+
+</RelativeLayout>

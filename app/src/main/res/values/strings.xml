@@ -1,0 +1,25 @@
+<resources>
+    <string name="app_name">BS Schedule</string>
+    <string name="details">Details</string>
+
+    <string name="Date">Date</string>
+    <string name="Day">Day</string>
+    <string name="Place">Place</string>
+    <string name="Sub">Sub</string>
+    <string name="Speaker">Speaker</string>
+    <string name="submit">Submit</string>
+    <string name="hint_date">17.02.19</string>
+
+    <string name="nodataav">No Data Available</string>
+
+    //Home Screen
+
+    <string name="emailid">EMAIL ID</string>
+    <string name="password">PASSWORD</string>
+    <string name="Skip">SKIP</string>
+    <string name="NEXT">NEXT</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+</resources>
