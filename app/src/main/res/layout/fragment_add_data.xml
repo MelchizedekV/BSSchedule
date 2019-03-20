@@ -5,7 +5,199 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".AddData">
+<ScrollView
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
 
-    <!-- TODO: Update blank fragment layout -->
 
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true">
+
+
+
+        <RelativeLayout
+            android:id="@+id/rel_lay_addData_date"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="50dp"
+            android:layout_marginTop="50dp"
+            android:layout_marginRight="50dp">
+
+            <TextView
+                android:id="@+id/txt_addData_Date"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/Date"
+                android:textSize="20sp"
+                android:visibility="gone" />
+
+            <EditText
+                android:id="@+id/edtxt_addData_date"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/txt_addData_Date"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/edittxtborder"
+                android:hint="@string/Date"
+                android:maxLines="1"
+                android:textColor="@color/black"
+                android:textCursorDrawable="@null"
+                android:textSize="20sp">
+
+            </EditText>
+
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/rel_lay_addData_day"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/rel_lay_addData_date"
+            android:layout_marginLeft="50dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginRight="50dp">
+
+            <TextView
+                android:id="@+id/txt_addData_day"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/Day"
+                android:textSize="20sp"
+                android:visibility="gone" />
+
+            <EditText
+                android:id="@+id/edtxt_addData_day"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/txt_addData_day"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/edittxtborder"
+                android:hint="@string/Day"
+                android:maxLines="1"
+                android:textColor="@color/black"
+                android:textCursorDrawable="@null"
+                android:textSize="20sp" />
+
+
+        </RelativeLayout>
+        <RelativeLayout
+            android:id="@+id/rel_lay_addData_place"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/rel_lay_addData_day"
+            android:layout_marginLeft="50dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginRight="50dp">
+
+            <TextView
+                android:id="@+id/txt_addData_place"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/Place"
+                android:textSize="20sp"
+                android:visibility="gone" />
+
+            <EditText
+                android:id="@+id/edtxt_addData_place"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/txt_addData_place"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/edittxtborder"
+                android:hint="@string/Place"
+                android:maxLines="1"
+                android:textColor="@color/black"
+                android:textCursorDrawable="@null"
+                android:textSize="20sp" />
+
+
+        </RelativeLayout>
+        <RelativeLayout
+            android:id="@+id/rel_lay_addData_sub"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/rel_lay_addData_place"
+            android:layout_marginLeft="50dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginRight="50dp">
+
+            <TextView
+                android:id="@+id/txt_addData_sub"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/Sub"
+                android:textSize="20sp"
+                android:visibility="gone" />
+
+            <EditText
+                android:id="@+id/edtxt_addData_sub"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/txt_addData_sub"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/edittxtborder"
+                android:hint="@string/Sub"
+                android:maxLines="1"
+                android:textColor="@color/black"
+                android:textCursorDrawable="@null"
+                android:textSize="20sp" />
+
+
+        </RelativeLayout>
+        <RelativeLayout
+            android:id="@+id/rel_lay_addData_speaker"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/rel_lay_addData_sub"
+            android:layout_marginLeft="50dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginRight="50dp">
+
+            <TextView
+                android:id="@+id/txt_addData_speaker"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/Speaker"
+                android:textSize="20sp"
+                android:visibility="gone" />
+
+            <EditText
+                android:id="@+id/edtxt_addData_speaker"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/txt_addData_speaker"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/edittxtborder"
+                android:hint="@string/Speaker"
+                android:maxLines="1"
+                android:textColor="@color/black"
+                android:textCursorDrawable="@null"
+                android:textSize="20sp" />
+
+
+        </RelativeLayout>
+        <TextView
+            android:id="@+id/txt_addData_submit"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/rel_lay_addData_speaker"
+            android:layout_centerInParent="true"
+            android:layout_marginTop="60dp"
+            android:background="@drawable/btncolor"
+            android:paddingLeft="100dp"
+            android:paddingTop="15dp"
+            android:paddingRight="100dp"
+            android:paddingBottom="15dp"
+            android:textAllCaps="true"
+            android:text="@string/submit"
+            android:textColor="@color/white"
+            android:textSize="20dp" />
+
+
+    </RelativeLayout>
+</ScrollView>
 </RelativeLayout>
