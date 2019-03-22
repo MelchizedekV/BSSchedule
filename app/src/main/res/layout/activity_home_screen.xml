@@ -143,8 +143,8 @@
         android:layout_alignParentBottom="true"
         android:background="@drawable/btncolor"
         android:visibility="gone"
-        app:itemIconTint="@color/white"
-        app:itemTextColor="@color/white"
+        app:itemIconTint="@drawable/bottom_navigation_btn_colors"
+        app:itemTextColor="@drawable/bottom_navigation_btn_colors"
         app:menu="@menu/bottom_navigation_menu" />
 
 

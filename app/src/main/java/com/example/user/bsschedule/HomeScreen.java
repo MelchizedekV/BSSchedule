@@ -77,7 +77,7 @@ public class HomeScreen extends AppCompatActivity {
                         navigationView.setVisibility(View.VISIBLE);
                 }
 
-                return false;
+                return true;
             }
 
                  });

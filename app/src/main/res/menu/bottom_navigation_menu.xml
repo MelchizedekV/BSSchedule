@@ -8,7 +8,7 @@
 
     <item
         android:id="@+id/Retrieve_Data"
-        android:icon="@drawable/retrieve"
+        android:icon="@drawable/download"
         android:title="@string/retrieve"/>
 
 </menu>

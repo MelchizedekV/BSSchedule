@@ -4,22 +4,13 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:layout_marginTop="70dp"
     tools:context=".MainActivity">
-
-    <ImageView
-        android:id="@+id/imgbsscrip"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:src="@drawable/bsicon"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="50dp"
-        />
 
     <EditText
         android:id="@+id/etdate"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@id/imgbsscrip"
         android:drawableRight="@drawable/calender"
         android:paddingLeft="50dp"
         android:paddingRight="50dp"
