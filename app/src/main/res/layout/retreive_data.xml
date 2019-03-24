@@ -5,19 +5,23 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:layout_marginTop="70dp"
-    tools:context=".MainActivity">
+    >
 
-    <EditText
-        android:id="@+id/etdate"
+    <TextView
+        android:id="@+id/txtdate"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:drawableRight="@drawable/calender"
+        android:drawableEnd="@drawable/calender"
+        android:background="@drawable/edittxtborder"
+        android:textColor="@color/black"
+        android:hint="17.2.2019"
         android:paddingLeft="50dp"
         android:paddingRight="50dp"
         android:layout_margin="50dp"
-        android:hint="@string/hint_date"
         android:padding="10dp"
-        android:drawableEnd="@drawable/calender" />
+        android:textSize="20sp"
+        />
 
  <!--  <Spinner
        android:id="@+id/spinnplace"
@@ -33,7 +37,7 @@
         android:id="@+id/etplace"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/etdate"
+        android:layout_below="@+id/txtdate"
         android:layout_margin="50dp"
         android:paddingLeft="50dp"
         android:paddingRight="50dp"

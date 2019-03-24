@@ -8,4 +8,10 @@
         <item name="colorAccent">@color/colorAccent</item>
     </style>
 
+    <style name="DatepickerTheme" parent="Theme.AppCompat.Light.NoActionBar">
+
+        <item name="colorAccent">@color/colorPrimary</item>
+        <item name="android:gravity">center</item>
+        <item name="android:layout_gravity">center</item>
+    </style>
 </resources>

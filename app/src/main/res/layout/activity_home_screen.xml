@@ -39,6 +39,7 @@
                 android:layout_height="wrap_content"
                 android:text="@string/emailid"
                 android:textSize="20sp"
+                android:textColor="@color/black"
                 android:visibility="gone" />
 
             <EditText
@@ -74,6 +75,7 @@
                 android:layout_height="wrap_content"
                 android:text="@string/password"
                 android:textSize="20sp"
+                android:textColor="@color/black"
                 android:visibility="gone" />
 
             <EditText
@@ -141,7 +143,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
-        android:background="@drawable/btncolor"
+        android:background="@color/colorPrimary"
         android:visibility="gone"
         app:itemIconTint="@drawable/bottom_navigation_btn_colors"
         app:itemTextColor="@drawable/bottom_navigation_btn_colors"
