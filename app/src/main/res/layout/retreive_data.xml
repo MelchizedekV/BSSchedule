@@ -38,6 +38,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@+id/txtdate"
+         android:background="@drawable/edittxtborder"
         android:layout_margin="50dp"
         android:paddingLeft="50dp"
         android:paddingRight="50dp"
