@@ -94,11 +94,11 @@ public class AddData extends Fragment {
     private void AddDataToServer() {
         if (!edtxtDate.getText().toString().isEmpty() && !edtxtDay.getText().toString().isEmpty() && !edtxtplace.getText().toString().isEmpty() && !edtxtSub.getText().toString().isEmpty() && !edtxtSpeaker.getText().toString().isEmpty()) {
             Map<String, Object> data = new HashMap<>();
-            data.put("DATE", edtxtDate.getText().toString());
-            data.put("DAY", edtxtDay.getText().toString());
-            data.put("PLACE", edtxtplace.getText().toString());
-            data.put("SPEAKER", edtxtSpeaker.getText().toString());
-            data.put("SUBJECT", edtxtSub.getText().toString());
+            data.put("date", edtxtDate.getText().toString());
+            data.put("day", edtxtDay.getText().toString());
+            data.put("place", edtxtplace.getText().toString());
+            data.put("speaker", edtxtSpeaker.getText().toString());
+            data.put("subject", edtxtSub.getText().toString());
             db.collection("Schedule").add(data).addOnSuccessListener(new OnSuccessListener<DocumentReference>() {
                 @Override
                 public void onSuccess(DocumentReference documentReference) {

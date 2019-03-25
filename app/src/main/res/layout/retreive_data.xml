@@ -4,8 +4,15 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:layout_marginTop="70dp"
+
     >
+     <RelativeLayout
+         android:id="@+id/retrieveDataHeader"
+         android:layout_width="match_parent"
+         android:layout_height="match_parent"
+         android:layout_marginTop="70dp"
+         >
+
 
     <TextView
         android:id="@+id/txtdate"
@@ -38,7 +45,6 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@+id/txtdate"
-         android:background="@drawable/edittxtborder"
         android:layout_margin="50dp"
         android:paddingLeft="50dp"
         android:paddingRight="50dp"
@@ -64,5 +70,14 @@
         android:paddingTop="15dp"
         android:paddingBottom="15dp"
         />
+     </RelativeLayout>
 
+    <FrameLayout
+        android:id="@+id/container"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="gone"
+        >
+
+    </FrameLayout>
 </RelativeLayout>
