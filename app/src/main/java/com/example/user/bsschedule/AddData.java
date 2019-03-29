@@ -2,10 +2,12 @@ package com.example.user.bsschedule;
 
 
 import android.content.Context;
+import android.os.Build;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
+import android.support.v7.app.AppCompatActivity;
 import android.text.Editable;
 import android.text.TextWatcher;
 import android.view.LayoutInflater;
@@ -14,6 +16,7 @@ import android.view.ViewGroup;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
+import android.support.v7.widget.Toolbar;
 
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
@@ -33,6 +36,8 @@ public class AddData extends Fragment {
     Boolean isDateFocus = false, isDayFocus = false, isPlaceFocus = false, isSpeakerFocus = false, isSubFocus = false;
     FirebaseFirestore db ;
     Context context;
+
+
     public AddData() {
         // Required empty public constructor
     }
@@ -60,6 +65,7 @@ public class AddData extends Fragment {
         txtSub = view.findViewById(R.id.txt_addData_sub);
         txtSubmit=view.findViewById(R.id.txt_addData_submit);
         db = FirebaseFirestore.getInstance();
+
         edtxtDate = view.findViewById(R.id.edtxt_addData_date);
         edtxtDay = view.findViewById(R.id.edtxt_addData_day);
         edtxtplace = view.findViewById(R.id.edtxt_addData_place);
@@ -74,7 +80,6 @@ public class AddData extends Fragment {
         dayListner();
         submitListner();
         placeListner();
-        AddDataToServer();
         speakerListner();
         subListner();
         return view;
@@ -91,7 +96,8 @@ public class AddData extends Fragment {
         });
     }
 
-    private void AddDataToServer() {
+    private void AddDataToServer()
+    {
         if (!edtxtDate.getText().toString().isEmpty() && !edtxtDay.getText().toString().isEmpty() && !edtxtplace.getText().toString().isEmpty() && !edtxtSub.getText().toString().isEmpty() && !edtxtSpeaker.getText().toString().isEmpty()) {
             Map<String, Object> data = new HashMap<>();
             data.put("date", edtxtDate.getText().toString());
@@ -334,45 +340,8 @@ public class AddData extends Fragment {
         });
     }
 
-    @Override
-    public void onActivityCreated(@Nullable Bundle savedInstanceState) {
-        super.onActivityCreated(savedInstanceState);
 
 
-    }
 
-    @Override
-    public void onStart() {
-        super.onStart();
-    }
 
-    @Override
-    public void onResume() {
-        super.onResume();
-    }
-
-    @Override
-    public void onPause() {
-        super.onPause();
-    }
-
-    @Override
-    public void onStop() {
-        super.onStop();
-    }
-
-    @Override
-    public void onDestroyView() {
-        super.onDestroyView();
-    }
-
-    @Override
-    public void onDestroy() {
-        super.onDestroy();
-    }
-
-    @Override
-    public void onDetach() {
-        super.onDetach();
-    }
 }

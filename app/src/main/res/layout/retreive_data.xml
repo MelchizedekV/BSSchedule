@@ -6,7 +6,27 @@
     android:layout_height="match_parent"
 
     >
-     <RelativeLayout
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true"
+        android:background="@drawable/btncolor"
+        >
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="RETRIEVE DATA"
+            android:textColor="@color/white"
+            android:textSize="22sp"
+            />
+
+
+    </android.support.v7.widget.Toolbar>
+
+    <RelativeLayout
          android:id="@+id/retrieveDataHeader"
          android:layout_width="match_parent"
          android:layout_height="match_parent"
@@ -40,8 +60,8 @@
        >
 
    </Spinner>
- -->   <EditText
-        android:id="@+id/etplace"
+ -->   <TextView
+        android:id="@+id/txtplace"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@+id/txtdate"
@@ -49,16 +69,16 @@
         android:paddingLeft="50dp"
         android:paddingRight="50dp"
         android:padding="10dp"
+        android:background="@drawable/edittxtborder"
+        android:drawableEnd="@drawable/drop"
+        android:drawableRight="@drawable/drop">
 
-
-    >
-
-    </EditText>
+    </TextView>
     <TextView
         android:id="@+id/submitbtn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/etplace"
+        android:layout_below="@+id/txtplace"
         android:text="@string/submit"
         android:background="@drawable/btncolor"
         android:layout_centerHorizontal="true"

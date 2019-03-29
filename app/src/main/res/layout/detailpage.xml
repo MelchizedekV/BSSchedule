@@ -3,27 +3,27 @@
     xmlns:tool="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
-
-    <ImageView
-        android:id="@+id/imgbckicon"
-        android:layout_width="wrap_content"
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
         android:layout_alignParentLeft="true"
-        android:layout_alignParentTop="true"
-        android:layout_margin="10dp"
-        android:padding="10dp"
-        android:src="@drawable/backbtn" />
+        android:background="@drawable/btncolor"
+        >
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="DETAIL PAGE"
+            android:textColor="@color/white"
+            android:textSize="22sp"
+            />
 
-    <TextView
-        android:id="@+id/txttitle"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/imgbckicon"
-        android:layout_margin="20dp"
-        android:text="@string/details"
-        android:textColor="@color/black"
-        android:textSize="20dp"
-        android:textStyle="bold" />
+
+    </android.support.v7.widget.Toolbar>
+
+
 
     <TextView
         android:id="@+id/nodata"
@@ -37,8 +37,8 @@
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_below="@+id/txttitle"
-
+        android:layout_below="@+id/toolbar"
+        android:layout_marginTop="50dp"
         >
 
         <RelativeLayout
