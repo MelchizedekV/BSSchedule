@@ -1,6 +1,7 @@
 package com.example.user.bsschedule;
 
 import android.content.Context;
+import android.support.v7.app.AlertDialog;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -8,25 +9,26 @@ import android.widget.AdapterView;
 import android.widget.BaseAdapter;
 import android.widget.TextView;
 
-public class RetrieveDataAdapter extends BaseAdapter
-{
+import java.util.List;
+
+public class RetrieveDataAdapter extends BaseAdapter {
     Context context;
-    String[] countryNames;
+    List<String> placeList;
     LayoutInflater inflter;
+    RetrieveData retrieveData;
 
-
-    public RetrieveDataAdapter(Context context, String[] countryNames)
-    {
-     this.context=context;
-     this.countryNames=countryNames;
-     inflter = (LayoutInflater.from(context));
-
+    public RetrieveDataAdapter(Context context, List<String> placeList, RetrieveData retrieveData) {
+        this.context = context;
+        this.placeList = placeList;
+        inflter = (LayoutInflater.from(context));
+        this.retrieveData = retrieveData;
     }
+
 
     @Override
     public int getCount() {
 
-        return countryNames.length;
+        return placeList.size();
     }
 
     @Override
@@ -40,12 +42,19 @@ public class RetrieveDataAdapter extends BaseAdapter
     }
 
     @Override
-    public View getView(int i, View view, ViewGroup viewGroup)
-    {
+    public View getView(final int i, View view, ViewGroup viewGroup) {
 
         view = inflter.inflate(R.layout.retrieve_single_row, null);
-        TextView single_txt=view.findViewById(R.id.retrieve_single_row_place);
-        single_txt.setText(countryNames[i]);
+        TextView single_txt = view.findViewById(R.id.retrieve_single_row_place);
+        single_txt.setText(placeList.get(i));
+        single_txt.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                String place = placeList.get(i);
+                retrieveData.placePopulater(place);
+            }
+        });
         return view;
     }
 }

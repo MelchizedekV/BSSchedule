@@ -18,10 +18,16 @@
     <style name="customAlert" >
 
         <item name="android:windowFullscreen">true</item>
+        <item name="android:background">#20ffffff</item>
         <item name="android:windowContentOverlay">@null</item>
-        <item name="android:layout_marginTop">40dp</item>
-        <item name="android:background">@color/transparent</item>
+        <item name="android:layout_marginTop">20dp</item>
+        <item name="android:windowBackground">@color/transparent</item>
+        <item name="android:windowNoTitle">true</item>
 
     </style>
 
+    <style name="ProgressBar">
+        <item name="colorAccent">@color/colorPrimary</item>
+
+    </style>
 </resources>

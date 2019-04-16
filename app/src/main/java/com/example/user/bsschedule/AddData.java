@@ -6,6 +6,7 @@ import android.os.Build;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
+import android.support.design.widget.Snackbar;
 import android.support.v4.app.Fragment;
 import android.support.v7.app.AppCompatActivity;
 import android.text.Editable;
@@ -14,8 +15,9 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.EditText;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
-import android.widget.Toast;
+
 import android.support.v7.widget.Toolbar;
 
 import com.google.android.gms.tasks.OnFailureListener;
@@ -36,7 +38,7 @@ public class AddData extends Fragment {
     Boolean isDateFocus = false, isDayFocus = false, isPlaceFocus = false, isSpeakerFocus = false, isSubFocus = false;
     FirebaseFirestore db ;
     Context context;
-
+    RelativeLayout relativeLayout;
 
     public AddData() {
         // Required empty public constructor
@@ -65,7 +67,7 @@ public class AddData extends Fragment {
         txtSub = view.findViewById(R.id.txt_addData_sub);
         txtSubmit=view.findViewById(R.id.txt_addData_submit);
         db = FirebaseFirestore.getInstance();
-
+        relativeLayout=view.findViewById(R.id.add_data_root_layout);
         edtxtDate = view.findViewById(R.id.edtxt_addData_date);
         edtxtDay = view.findViewById(R.id.edtxt_addData_day);
         edtxtplace = view.findViewById(R.id.edtxt_addData_place);
@@ -91,7 +93,14 @@ public class AddData extends Fragment {
             @Override
             public void onClick(View view)
             {
-                AddDataToServer();
+                if(!edtxtDate.getText().toString().isEmpty()&&!edtxtplace.getText().toString().isEmpty()) {
+
+                    AddDataToServer();
+                }
+                else
+                {
+                    callSnackbar("Date and Place should not be Empty");
+                }
             }
         });
     }
@@ -108,7 +117,8 @@ public class AddData extends Fragment {
             db.collection("Schedule").add(data).addOnSuccessListener(new OnSuccessListener<DocumentReference>() {
                 @Override
                 public void onSuccess(DocumentReference documentReference) {
-                    Toast.makeText(context, "Data added Successfully", Toast.LENGTH_LONG).show();
+
+                    callSnackbar( "Data added Successfully");
                     edtxtDate.setText("");
                     edtxtDay.setText("");
                     edtxtplace.setText("");
@@ -119,13 +129,14 @@ public class AddData extends Fragment {
                     .addOnFailureListener(new OnFailureListener() {
                         @Override
                         public void onFailure(@NonNull Exception e) {
-                            Toast.makeText(context, "Please Try again", Toast.LENGTH_LONG).show();
+                        callSnackbar("Please Try again");
                         }
                     });
         }
         else
         {
-            Toast.makeText(context, "Fields Should not be empty", Toast.LENGTH_LONG).show();
+            callSnackbar("Fields Should not be empty");
+
         }
     }
 
@@ -339,7 +350,11 @@ public class AddData extends Fragment {
             }
         });
     }
-
+    public void callSnackbar(String Message)
+    {
+        Snackbar snackbar=Snackbar.make(relativeLayout,Message,Snackbar.LENGTH_LONG);
+        snackbar.show();
+    }
 
 
 

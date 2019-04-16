@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout
+    android:id="@+id/add_data_root_layout"
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -29,13 +31,15 @@
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_below="@+id/toolbar">
+        android:layout_below="@+id/toolbar"
+        android:layout_marginTop="50dp"
+        >
 
 
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_marginTop="50dp">
+          >
 
 
             <RelativeLayout
@@ -43,7 +47,6 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="50dp"
-                android:layout_marginTop="50dp"
                 android:layout_marginRight="50dp">
 
                 <TextView
@@ -214,20 +217,22 @@
                 android:id="@+id/txt_addData_submit"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_below="@+id/rel_lay_addData_speaker"
-                android:layout_centerInParent="true"
-                android:layout_marginTop="60dp"
+                android:layout_alignParentBottom="true"
+                android:layout_centerHorizontal="true"
                 android:background="@drawable/btncolor"
+                android:text="@string/submit"
+                android:textAllCaps="true"
+                android:layout_marginTop="60dp"
+                android:textColor="@color/white"
                 android:paddingLeft="100dp"
                 android:paddingTop="15dp"
                 android:paddingRight="100dp"
                 android:paddingBottom="15dp"
-                android:text="@string/submit"
-                android:textAllCaps="true"
-                android:textColor="@color/white"
-                android:textSize="20dp" />
+                android:layout_below="@+id/rel_lay_addData_speaker"
+                android:textSize="20sp" />
 
 
         </RelativeLayout>
     </ScrollView>
+
 </RelativeLayout>

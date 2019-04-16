@@ -2,6 +2,7 @@ package com.example.user.bsschedule;
 
 import android.support.annotation.NonNull;
 import android.support.design.widget.BottomNavigationView;
+import android.support.design.widget.Snackbar;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
@@ -34,7 +35,8 @@ public class HomeScreen extends AppCompatActivity {
     RetrieveData retrieveData;
     private FirebaseAuth mAuth;
     BottomNavigationView navigationView;
-    String EmailID,Password;
+    String EmailID, Password;
+    RelativeLayout relativeLayout;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -46,9 +48,10 @@ public class HomeScreen extends AppCompatActivity {
         txtNext = findViewById(R.id.txt_homescreen_nextbtn);
         edtxtEmailID = findViewById(R.id.edtxt_homescreen_email);
         edtxtPassword = findViewById(R.id.edtxt_homescreen_password);
-        navigationView=findViewById(R.id.bottom_naviagtion);
+        navigationView = findViewById(R.id.bottom_naviagtion);
         container = findViewById(R.id.container);
         homescreen = findViewById(R.id.rel_lay_homescreen_header);
+        relativeLayout = findViewById(R.id.home_screen_root_lay);
         mAuth = FirebaseAuth.getInstance();
         emailIDFocusListner();
         passwordFocusListner();
@@ -59,13 +62,11 @@ public class HomeScreen extends AppCompatActivity {
         bottomNavigationLisner();
     }
 
-     public void bottomNavigationLisner()
-    {
+    public void bottomNavigationLisner() {
         navigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
-                switch (menuItem.getItemId())
-                {
+                switch (menuItem.getItemId()) {
                     case R.id.add_data:
                         AddDataFragment();
                         visibilityHandler(false);
@@ -80,10 +81,10 @@ public class HomeScreen extends AppCompatActivity {
                 return true;
             }
 
-                 });
+        });
     }
 
-     void guestUserListner() {
+    void guestUserListner() {
         txtguest.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -94,31 +95,29 @@ public class HomeScreen extends AppCompatActivity {
             }
         });
     }
-     void RetrieveDataFragment()
-    {
-        retrieveData=new RetrieveData();
+
+    void RetrieveDataFragment() {
+        retrieveData = new RetrieveData();
         fragmentManager = getSupportFragmentManager();
         fragmentTransaction = fragmentManager.beginTransaction();
-        fragmentTransaction.replace(R.id.container,retrieveData).commit();
+        fragmentTransaction.replace(R.id.container, retrieveData).addToBackStack("DetailPage").commit();
     }
 
-     void AddDataFragment()
-    {
-        addData=new AddData();
+    void AddDataFragment() {
+        addData = new AddData();
         fragmentManager = getSupportFragmentManager();
         fragmentTransaction = fragmentManager.beginTransaction();
-        fragmentTransaction.replace(R.id.container,addData).commit();
+        fragmentTransaction.replace(R.id.container, addData).commit();
     }
 
-  public void btnNextListner() {
+    public void btnNextListner() {
         txtNext.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
 
-                EmailID=edtxtEmailID.getText().toString();
-                Password=edtxtPassword.getText().toString();
-                if((EmailID!=null&&!EmailID.isEmpty())&&(Password!=null&&!Password.isEmpty()))
-                {
+                EmailID = edtxtEmailID.getText().toString();
+                Password = edtxtPassword.getText().toString();
+                if ((EmailID != null && !EmailID.isEmpty()) && (Password != null && !Password.isEmpty())) {
                     mAuth.signInWithEmailAndPassword(EmailID, Password).addOnCompleteListener(HomeScreen.this, new OnCompleteListener<AuthResult>() {
                         @Override
                         public void onComplete(@NonNull Task<AuthResult> task) {
@@ -127,15 +126,13 @@ public class HomeScreen extends AppCompatActivity {
                                 visibilityHandler(false);
                                 navigationView.setVisibility(View.VISIBLE);
                             } else {
-                                Toast.makeText(HomeScreen.this, "Enter Valid Email ID or Password", Toast.LENGTH_LONG).show();
+                                callSnackbar("Enter Valid Email ID or Password");
                             }
                         }
                     });
-                }
-                else
-                {
-                    Toast.makeText(HomeScreen.this, "Field should not be empty", Toast.LENGTH_LONG).show();
+                } else {
 
+                    callSnackbar("Field should not be empty");
                 }
 
             }
@@ -144,8 +141,7 @@ public class HomeScreen extends AppCompatActivity {
     }
 
 
-
-     void visibilityHandler(boolean isActivity) {
+    void visibilityHandler(boolean isActivity) {
         if (isActivity) {
             homescreen.setVisibility(View.VISIBLE);
             container.setVisibility(View.GONE);
@@ -157,7 +153,7 @@ public class HomeScreen extends AppCompatActivity {
         }
     }
 
-     void passTxtListner() {
+    void passTxtListner() {
         edtxtPassword.addTextChangedListener(new TextWatcher() {
             @Override
             public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
@@ -182,7 +178,7 @@ public class HomeScreen extends AppCompatActivity {
         });
     }
 
-     void emailidTxtListner() {
+    void emailidTxtListner() {
         edtxtEmailID.addTextChangedListener(new TextWatcher() {
             @Override
             public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
@@ -240,5 +236,8 @@ public class HomeScreen extends AppCompatActivity {
 
     }
 
-
+    public void callSnackbar(String Message) {
+        Snackbar snackbar = Snackbar.make(relativeLayout, Message, Snackbar.LENGTH_LONG);
+        snackbar.show();
+    }
 }
