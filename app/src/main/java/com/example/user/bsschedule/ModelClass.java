@@ -1,18 +1,20 @@
 package com.example.user.bsschedule;
 
-
 import android.os.Parcel;
 import android.os.Parcelable;
 
 public class ModelClass implements Parcelable
-  { String date;
-    String day;
-    String place;
-    String subject;
-    String speaker;
+{
+    private String date;
+    private String day;
+    private String place;
+    private String subject;
+    private String speaker;
+    private String time;
+    private String classType;
 
-    public ModelClass()
-    {
+    public ModelClass() {
+        
     }
 
     public String getDate() {
@@ -55,16 +57,34 @@ public class ModelClass implements Parcelable
         this.speaker = speaker;
     }
 
+    public String getTime() {
+        return time;
+    }
+
+    public void setTime(String time) {
+        this.time = time;
+    }
+
+    public String getClassType() {
+        return classType;
+    }
+
+    public void setClassType(String classType) {
+        this.classType = classType;
+    }
+
     public static Creator<ModelClass> getCREATOR() {
         return CREATOR;
     }
 
-    protected ModelClass(Parcel in) {
+        ModelClass(Parcel in) {
         date = in.readString();
         day = in.readString();
         place = in.readString();
         subject = in.readString();
         speaker = in.readString();
+        time = in.readString();
+        classType = in.readString();
     }
 
     @Override
@@ -79,6 +99,8 @@ public class ModelClass implements Parcelable
         dest.writeString(place);
         dest.writeString(subject);
         dest.writeString(speaker);
+        dest.writeString(time);
+        dest.writeString(classType);
     }
 
     @SuppressWarnings("unused")

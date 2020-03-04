@@ -1,34 +1,39 @@
 package com.example.user.bsschedule;
 
 import android.content.Context;
-import android.support.v7.app.AlertDialog;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.AdapterView;
 import android.widget.BaseAdapter;
 import android.widget.TextView;
 
+import java.util.ArrayList;
 import java.util.List;
+import java.util.Set;
 
 public class RetrieveDataAdapter extends BaseAdapter {
     Context context;
-    List<String> placeList;
+    List<String> dataList;
     LayoutInflater inflter;
-    RetrieveData retrieveData;
+    RetrieveDataNew retrieveData;
+    Boolean isPlaceList;
 
-    public RetrieveDataAdapter(Context context, List<String> placeList, RetrieveData retrieveData) {
+    public RetrieveDataAdapter(Context context, Set<String> placeList, RetrieveDataNew retrieveData, Boolean isPlaceList) {
         this.context = context;
-        this.placeList = placeList;
+        this.dataList =new ArrayList<>(placeList) ;
         inflter = (LayoutInflater.from(context));
         this.retrieveData = retrieveData;
+        this.isPlaceList =isPlaceList;
     }
+
+
+
 
 
     @Override
     public int getCount() {
 
-        return placeList.size();
+        return dataList.size();
     }
 
     @Override
@@ -46,13 +51,17 @@ public class RetrieveDataAdapter extends BaseAdapter {
 
         view = inflter.inflate(R.layout.retrieve_single_row, null);
         TextView single_txt = view.findViewById(R.id.retrieve_single_row_place);
-        single_txt.setText(placeList.get(i));
+        single_txt.setText(dataList.get(i));
         single_txt.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                String place = dataList.get(i);
 
-                String place = placeList.get(i);
-                retrieveData.placePopulater(place);
+                if(isPlaceList)
+                    retrieveData.placePopulater(place);
+                else
+                    retrieveData.timePopulater(place);
+
             }
         });
         return view;

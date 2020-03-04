@@ -17,7 +17,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="start"
-            android:src="@drawable/ic_arrow_back_black_24dp"
+            android:src="@drawable/ic_back_arrow"
 
             />
 
@@ -50,7 +50,7 @@
 
         <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:layout_height="wrap_content">
 
             <LinearLayout
                 android:id="@+id/dateLayout"
@@ -65,7 +65,7 @@
                     android:layout_margin="20dp"
                     android:layout_weight="1"
                     android:text="@string/Date"
-                    android:textSize="20dp" />
+                    android:textSize="15dp" />
 
                 <TextView
                     android:id="@+id/date"
@@ -74,7 +74,7 @@
                     android:layout_margin="20dp"
                     android:layout_weight="1"
                     android:textColor="@color/black"
-                    android:textSize="20dp"
+                    android:textSize="15dp"
                     tool:text="@string/Date" />
 
             </LinearLayout>
@@ -103,7 +103,7 @@
                     android:layout_margin="20dp"
                     android:layout_weight="1"
                     android:text="@string/Day"
-                    android:textSize="20dp" />
+                    android:textSize="15dp"  />
 
                 <TextView
                     android:id="@+id/day"
@@ -112,7 +112,7 @@
                     android:layout_margin="20dp"
                     android:layout_weight="1"
                     android:textColor="@color/black"
-                    android:textSize="20dp"
+                    android:textSize="15dp"
                     tool:text="@string/Day" />
             </LinearLayout>
 
@@ -141,7 +141,7 @@
                     android:layout_margin="20dp"
                     android:layout_weight="1"
                     android:text="@string/Place"
-                    android:textSize="20dp" />
+                    android:textSize="15dp"  />
 
                 <TextView
                     android:id="@+id/place"
@@ -150,7 +150,7 @@
                     android:layout_margin="20dp"
                     android:layout_weight="1"
                     android:textColor="@color/black"
-                    android:textSize="20dp"
+                    android:textSize="15dp"
                     tool:text="@string/Place" />
 
             </LinearLayout>
@@ -179,7 +179,7 @@
                     android:layout_margin="20dp"
                     android:layout_weight="1"
                     android:text="@string/Sub"
-                    android:textSize="20dp" />
+                    android:textSize="15dp"  />
 
                 <TextView
                     android:id="@+id/sub"
@@ -188,7 +188,7 @@
                     android:layout_margin="20dp"
                     android:layout_weight="1"
                     android:textColor="@color/black"
-                    android:textSize="20dp"
+                    android:textSize="15dp"
                     tool:text="@string/Sub" />
 
             </LinearLayout>
@@ -217,7 +217,7 @@
                     android:layout_margin="20dp"
                     android:layout_weight="1"
                     android:text="@string/Speaker"
-                    android:textSize="20dp" />
+                    android:textSize="15dp"  />
 
                 <TextView
                     android:id="@+id/speaker"
@@ -226,7 +226,7 @@
                     android:layout_margin="20dp"
                     android:layout_weight="1"
                     android:textColor="@color/black"
-                    android:textSize="20dp"
+                    android:textSize="15dp"
                     tool:text="@string/Speaker" />
             </LinearLayout>
 
@@ -241,6 +241,83 @@
 
             </View>
 
+            <LinearLayout
+                android:id="@+id/TimeLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/viewseperator5"
+                android:weightSum="2">
+
+                <TextView
+                    android:id="@+id/txtTime"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="20dp"
+                    android:layout_weight="1"
+                    android:text="@string/Time"
+                    android:textSize="15dp"  />
+
+                <TextView
+                    android:id="@+id/time"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="20dp"
+                    android:layout_weight="1"
+                    android:textColor="@color/black"
+                    android:textSize="15dp"
+                    tool:text="@string/Time"
+                    />
+            </LinearLayout>
+
+
+            <View
+                android:id="@+id/viewseperator6"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_below="@+id/TimeLayout"
+                android:layout_marginLeft="20dp"
+                android:background="@color/grey">
+
+            </View>
+            <LinearLayout
+                android:id="@+id/classLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/viewseperator6"
+                android:weightSum="2">
+
+                <TextView
+                    android:id="@+id/txtclss"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="20dp"
+                    android:layout_weight="1"
+                    android:text="@string/classtype"
+                    android:textSize="15dp"  />
+
+                <TextView
+                    android:id="@+id/classType"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="20dp"
+                    android:layout_weight="1"
+                    android:text="@string/classtype"
+
+                    android:textColor="@color/black"
+                    android:textSize="15dp"
+                    />
+            </LinearLayout>
+
+
+            <View
+                android:id="@+id/viewseperator7"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_below="@+id/classLayout"
+                android:layout_marginLeft="20dp"
+                android:background="@color/grey">
+
+            </View>
         </RelativeLayout>
 
     </ScrollView>

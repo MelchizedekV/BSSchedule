@@ -1,10 +1,13 @@
 package com.example.user.bsschedule;
 
+import android.content.DialogInterface;
+import android.content.Intent;
 import android.support.annotation.NonNull;
 import android.support.design.widget.BottomNavigationView;
 import android.support.design.widget.Snackbar;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.text.Editable;
@@ -32,7 +35,7 @@ public class HomeScreen extends AppCompatActivity {
     FragmentManager fragmentManager;
     AddData addData;
     FragmentTransaction fragmentTransaction;
-    RetrieveData retrieveData;
+    AlertDialog.Builder closeAppPopUp;
     private FirebaseAuth mAuth;
     BottomNavigationView navigationView;
     String EmailID, Password;
@@ -52,44 +55,25 @@ public class HomeScreen extends AppCompatActivity {
         container = findViewById(R.id.container);
         homescreen = findViewById(R.id.rel_lay_homescreen_header);
         relativeLayout = findViewById(R.id.home_screen_root_lay);
+        closeAppPopUp = new AlertDialog.Builder(HomeScreen.this);
         mAuth = FirebaseAuth.getInstance();
+        edtxtEmailID.setText("Bsscriptures@gmail.com");
+        edtxtPassword.setText("bsscripture1874");
         emailIDFocusListner();
         passwordFocusListner();
         emailidTxtListner();
         passTxtListner();
         btnNextListner();
         guestUserListner();
-        bottomNavigationLisner();
+
     }
 
-    public void bottomNavigationLisner() {
-        navigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
-            @Override
-            public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
-                switch (menuItem.getItemId()) {
-                    case R.id.add_data:
-                        AddDataFragment();
-                        visibilityHandler(false);
-                        navigationView.setVisibility(View.VISIBLE);
-                        break;
-                    case R.id.Retrieve_Data:
-                        RetrieveDataFragment();
-                        visibilityHandler(false);
-                        navigationView.setVisibility(View.VISIBLE);
-                }
-
-                return true;
-            }
-
-        });
-    }
 
     void guestUserListner() {
         txtguest.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                visibilityHandler(false);
-                navigationView.setVisibility(View.GONE);
+
                 RetrieveDataFragment();
 
             }
@@ -97,17 +81,9 @@ public class HomeScreen extends AppCompatActivity {
     }
 
     void RetrieveDataFragment() {
-        retrieveData = new RetrieveData();
-        fragmentManager = getSupportFragmentManager();
-        fragmentTransaction = fragmentManager.beginTransaction();
-        fragmentTransaction.replace(R.id.container, retrieveData).addToBackStack("DetailPage").commit();
-    }
+        Intent retrieveDataNew =new Intent(HomeScreen.this,RetrieveDataNew.class);
+        startActivity(retrieveDataNew);
 
-    void AddDataFragment() {
-        addData = new AddData();
-        fragmentManager = getSupportFragmentManager();
-        fragmentTransaction = fragmentManager.beginTransaction();
-        fragmentTransaction.replace(R.id.container, addData).commit();
     }
 
     public void btnNextListner() {
@@ -122,9 +98,7 @@ public class HomeScreen extends AppCompatActivity {
                         @Override
                         public void onComplete(@NonNull Task<AuthResult> task) {
                             if (task.isSuccessful()) {
-                                AddDataFragment();
-                                visibilityHandler(false);
-                                navigationView.setVisibility(View.VISIBLE);
+                                RetrieveDataFragment();
                             } else {
                                 callSnackbar("Enter Valid Email ID or Password");
                             }
@@ -141,17 +115,7 @@ public class HomeScreen extends AppCompatActivity {
     }
 
 
-    void visibilityHandler(boolean isActivity) {
-        if (isActivity) {
-            homescreen.setVisibility(View.VISIBLE);
-            container.setVisibility(View.GONE);
 
-        } else {
-            container.setVisibility(View.VISIBLE);
-            homescreen.setVisibility(View.GONE);
-
-        }
-    }
 
     void passTxtListner() {
         edtxtPassword.addTextChangedListener(new TextWatcher() {
@@ -233,6 +197,31 @@ public class HomeScreen extends AppCompatActivity {
                 }
             }
         });
+
+    }
+
+    @Override
+    public void onBackPressed() {
+
+        closeAppPopUp.setMessage("Do you want to close the application");
+        closeAppPopUp .setTitle("BS Scheduler");
+        closeAppPopUp.setPositiveButton("YES", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialogInterface, int i) {
+
+                        finish();
+                        HomeScreen.super.onBackPressed();
+                    }
+                });
+        closeAppPopUp.setNegativeButton("NO", new DialogInterface.OnClickListener() {
+                @Override
+                public void onClick(DialogInterface dialogInterface, int i) {
+
+                   dialogInterface.dismiss();
+
+            }
+            });
+        closeAppPopUp.show();
 
     }
 

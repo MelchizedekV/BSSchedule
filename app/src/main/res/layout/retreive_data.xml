@@ -78,11 +78,32 @@
         android:drawableRight="@drawable/drop">
 
     </TextView>
+
+        <TextView
+            android:id="@+id/txtTime"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/txtplace"
+            android:layout_margin="50dp"
+            android:textColor="@color/black"
+            android:textSize="20sp"
+            android:paddingLeft="50dp"
+            android:paddingRight="50dp"
+            android:padding="10dp"
+            android:background="@drawable/edittxtborder"
+            android:drawableEnd="@drawable/drop"
+            android:drawableRight="@drawable/drop">
+
+        </TextView>
+
+
+
+
     <TextView
         android:id="@+id/submitbtn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/txtplace"
+        android:layout_below="@+id/txtTime"
         android:text="@string/submit"
         android:background="@drawable/btncolor"
         android:layout_centerHorizontal="true"
@@ -96,14 +117,7 @@
         />
      </RelativeLayout>
 
-    <FrameLayout
-        android:id="@+id/container"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:visibility="gone"
-        >
 
-    </FrameLayout>
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -117,4 +131,7 @@
             android:visibility="gone"
             />
     </RelativeLayout>
+
+
+
 </RelativeLayout>
